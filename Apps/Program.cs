@@ -27,3 +27,7 @@ var arr = new DataStructures
     .Array<int>();
 arr.Add(10);
 arr.Add(15);
+arr.Add(30);
+arr.Add(35);
+Console.WriteLine($"{arr.Count}/{arr.Capacity}");
+Console.ReadLine();
