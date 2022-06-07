@@ -29,5 +29,6 @@ arr.Add(10);
 arr.Add(15);
 arr.Add(30);
 arr.Add(35);
+arr.Remove();
 Console.WriteLine($"{arr.Count}/{arr.Capacity}");
 Console.ReadLine();

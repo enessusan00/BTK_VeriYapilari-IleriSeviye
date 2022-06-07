@@ -24,7 +24,14 @@ namespace DataStructures.Array
             InnerList[Count] = item;
             Count++;
         }
-
+        public T Remove()
+        {
+            if (Count == 0)
+                throw new Exception("No more item in array");
+            var temp = InnerList[Count-1];
+            Count--;
+            return temp;
+        }
         private void DoubleArray()
         {
             var temp = new T[InnerList.Length*2];
