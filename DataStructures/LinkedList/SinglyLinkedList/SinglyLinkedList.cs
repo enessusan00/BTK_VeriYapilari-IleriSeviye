@@ -9,6 +9,7 @@ namespace DataStructures.LinkedList.SinglyLinkedList
    public class SinglyLinkedList<T>
     {
         public SinglyLinkedListNode<T> Head { get; set; }
+        private bool isHeadNull=> Head == null;
         public void AddFirst(T value )
         {
             var newNode = new SinglyLinkedListNode<T>( value );
@@ -25,6 +26,31 @@ namespace DataStructures.LinkedList.SinglyLinkedList
                 curr = curr.Next;
             curr.Next = newNode;
         }
-
+        public void AddAfter(SinglyLinkedListNode<T> node,
+            T value)
+        {
+            if(node == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if(isHeadNull)
+            {
+                AddFirst(value);
+                return;
+            }
+            var newNode = new SinglyLinkedListNode<T>(value);
+            var curr = Head;    
+            while(curr != null)
+            {
+                if(curr.Equals(node))
+                {
+                    newNode.Next=curr.Next;
+                    curr.Next=newNode;
+                    return;
+                }
+                curr=curr.Next;
+            }
+            throw new ArgumentException("node is not found");
+        }
     }
 }
