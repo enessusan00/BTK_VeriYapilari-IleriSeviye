@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿using DataStructures.LinkedList.SinglyLinkedList;
+using System.Collections;
+//Array
 #region
 ////Array
 //var arrChar = new char[3] {'a','v','d'};
@@ -22,6 +24,8 @@
 //}
 //Console.ReadKey();
 #endregion
+//GenericArray
+#region
 var p1 = new int[] { 1, 2, 3, 4 };
 var p2 = new List<int> { 1, 2, 3, 4 };
 var p3 = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6,7);
@@ -46,5 +50,15 @@ foreach (var item in copyArr)
 {
     Console.WriteLine(item);
 }
+#endregion
+//LinkedList
+#region
+var linkedList = new SinglyLinkedList<int>();
+linkedList.AddFirst(10);
+linkedList.AddFirst(15);    
+linkedList.AddFirst(30);
+linkedList.AddFirst(5);
 
+
+#endregion
 Console.ReadLine();
