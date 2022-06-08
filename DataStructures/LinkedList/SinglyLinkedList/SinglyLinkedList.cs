@@ -15,6 +15,16 @@ namespace DataStructures.LinkedList.SinglyLinkedList
             newNode.Next = Head;
             Head = newNode;
         }
+        public void AddLast(T value)
+        {
+            var newNode = new SinglyLinkedListNode<T>(value);
+            if(Head==null)
+                Head = newNode;
+            var curr = Head;
+            while(curr.Next!=null)
+                curr = curr.Next;
+            curr.Next = newNode;
+        }
 
     }
 }
