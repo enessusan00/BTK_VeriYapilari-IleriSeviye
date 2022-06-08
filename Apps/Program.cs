@@ -22,6 +22,9 @@
 //}
 //Console.ReadKey();
 #endregion
+var p1 = new int[] { 1, 2, 3, 4 };
+var p2 = new List<int> { 1, 2, 3, 4 };
+var p3 = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6,7);
 var arr = new DataStructures
     .Array
     .Array<int>();
