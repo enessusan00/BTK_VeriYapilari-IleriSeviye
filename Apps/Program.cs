@@ -39,4 +39,12 @@ foreach (var item in arr)
 {
     Console.WriteLine(item);
 }
+/////////////
+var realArr = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6);
+var copyArr = realArr.Clone() as DataStructures.Array.Array<int>;
+foreach (var item in copyArr)
+{
+    Console.WriteLine(item);
+}
+
 Console.ReadLine();
