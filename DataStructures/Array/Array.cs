@@ -28,10 +28,27 @@ namespace DataStructures.Array
         {
             if (Count == 0)
                 throw new Exception("No more item in array");
-            var temp = InnerList[Count-1];
-            Count--;
+          
+            if(InnerList.Length/4==Count)
+            {
+                HalfArray();
+            }
+            var temp = InnerList[Count - 1];
+            if (Count>0)
+                Count--;
             return temp;
         }
+
+        private void HalfArray()
+        {
+            if (InnerList.Length > 2)
+            {
+                var temp = new T[InnerList.Length / 2];
+                System.Array.Copy(InnerList, temp, InnerList.Length / 4);
+                InnerList = temp;
+            }
+        }
+
         private void DoubleArray()
         {
             var temp = new T[InnerList.Length*2];
