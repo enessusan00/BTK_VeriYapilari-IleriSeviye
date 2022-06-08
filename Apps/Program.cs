@@ -32,4 +32,8 @@ arr.Add(35);
 arr.Add(35);
 arr.Remove();
 Console.WriteLine($"{arr.Count}/{arr.Capacity}");
+foreach (var item in arr)
+{
+    Console.WriteLine(item);
+}
 Console.ReadLine();

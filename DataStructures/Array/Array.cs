@@ -63,12 +63,12 @@ namespace DataStructures.Array
 
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return InnerList.Take(Count).GetEnumerator();
         }
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
     }
 }
