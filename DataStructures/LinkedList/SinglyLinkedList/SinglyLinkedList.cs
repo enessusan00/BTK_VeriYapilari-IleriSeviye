@@ -52,5 +52,34 @@ namespace DataStructures.LinkedList.SinglyLinkedList
             }
             throw new ArgumentException("node is not found");
         }
+        public void AddBefore(SinglyLinkedListNode<T> node,
+            T value)
+        {
+            if (node == null)
+            {
+                throw new ArgumentNullException();
+            }
+            if (isHeadNull)
+            {
+                AddFirst(value);
+                return;
+            }
+            var newNode = new SinglyLinkedListNode<T>(value);
+            var curr = Head;
+            var prev = curr;
+
+            while (curr != null)
+            {
+                if (curr.Equals(node))
+                {
+                    newNode.Next = prev.Next;
+                    prev.Next = newNode;
+                    return;
+                }
+                prev = curr;
+                curr = curr.Next;
+            }
+            throw new ArgumentException("There is no such a node in the linked list.");
+        }
     }
 }

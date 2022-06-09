@@ -60,6 +60,6 @@ linkedList.AddFirst(30);
 linkedList.AddFirst(5);
 linkedList.AddLast(331);
 linkedList.AddAfter(linkedList.Head.Next, 50);
-
+linkedList.AddBefore(linkedList.Head.Next, 30);
 #endregion
 Console.ReadKey();
