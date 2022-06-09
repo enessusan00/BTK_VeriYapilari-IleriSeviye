@@ -103,6 +103,22 @@ namespace DataStructures.LinkedList.SinglyLinkedList
             Head=Head.Next;
             return firsValue;
         }
+        public T RemoveLast()
+        {
+            
+            if (Head == null)
+                throw new Exception("Underflow! nothing to remove ");
+            var curr = Head;
+            SinglyLinkedListNode<T> prev= null;
+            while (curr.Next != null)
+            {
+                prev = curr;
+                curr = curr.Next;
+            }
+            var lastValue = prev.Next.Value;
+            prev.Next = null;
+            return lastValue;
+        }
         public IEnumerator<T> GetEnumerator()
         {
             return new SinglyLinkedListEnumerator<T>(Head);

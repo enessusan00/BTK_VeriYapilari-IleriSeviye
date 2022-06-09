@@ -66,7 +66,7 @@ linkedList.RemoveFirst();
 linkedList.RemoveFirst();
 linkedList.RemoveFirst();
 linkedList.RemoveFirst();
-
+linkedList.RemoveLast();
 foreach (var item in linkedList)
 {
     Console.WriteLine(item);
@@ -76,10 +76,11 @@ var clinkedList = new SinglyLinkedList<int>(linkedList);
 //LINQ
 #region
 
-var dlinkedList= new SinglyLinkedList<int>(linkedList);
-dlinkedList.AddFirst(10);
-dlinkedList.AddFirst(15);
-dlinkedList.AddFirst(30);
-dlinkedList.ToList().ForEach(x => Console.WriteLine(x+ " "));
+//var dlinkedList= new SinglyLinkedList<int>(linkedList);
+//dlinkedList.AddFirst(10);
+//dlinkedList.AddFirst(15);
+//dlinkedList.AddFirst(30);
+
+//dlinkedList.ToList().ForEach(x => Console.WriteLine(x+ " "));
 #endregion
 Console.ReadKey();
