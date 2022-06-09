@@ -35,7 +35,7 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
                 return;
             }
             var newNode = new DoublyLinkedListNode<T>(value);
-            newNode.Next = null;            ,
+            newNode.Next = null;            
             newNode.Prev = Tail; 
             Tail = newNode;
         }  
@@ -67,6 +67,36 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
                 newNode.Prev = null;
                 refNode.Next = newNode;
                 Tail = newNode; 
+            }
+        }
+        public void AddBefore(DoublyLinkedListNode<T> refNode, DoublyLinkedListNode<T> newNode)
+        {
+            if (refNode == null)
+                throw new ArgumentNullException();
+            if (refNode == Head && refNode == Tail)
+            {
+                refNode.Prev = newNode;
+                refNode.Next = null;
+
+                newNode.Prev = null;
+                newNode.Next = refNode;
+                Head = newNode;
+                Tail = refNode;
+                return;
+            }
+            if (refNode != Tail)
+            {
+                newNode.Next = refNode;
+                newNode.Prev = refNode.Prev;
+                refNode.Prev.Next = newNode;
+                refNode.Prev = newNode;
+            }
+            else
+            {
+                newNode.Next = refNode;
+                refNode.Prev.Next= newNode;
+                refNode.Next = null;
+                Tail = refNode;
             }
         }
     }
