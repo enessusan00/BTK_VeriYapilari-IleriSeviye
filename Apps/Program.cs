@@ -58,6 +58,10 @@ linkedList.AddFirst(10);
 linkedList.AddFirst(15);
 linkedList.AddFirst(30);
 linkedList.AddFirst(5);
+linkedList.AddFirst(5);
+linkedList.AddFirst(5);
+linkedList.AddFirst(5);
+linkedList.AddLast(331);
 linkedList.AddLast(331);
 linkedList.AddAfter(linkedList.Head.Next, 50);
 linkedList.AddBefore(linkedList.Head.Next, 30);
@@ -67,6 +71,7 @@ linkedList.RemoveFirst();
 linkedList.RemoveFirst();
 linkedList.RemoveFirst();
 linkedList.RemoveLast();
+linkedList.Remove(331);
 foreach (var item in linkedList)
 {
     Console.WriteLine(item);

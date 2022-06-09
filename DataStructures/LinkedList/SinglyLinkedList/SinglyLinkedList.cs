@@ -119,6 +119,56 @@ namespace DataStructures.LinkedList.SinglyLinkedList
             prev.Next = null;
             return lastValue;
         }
+        public void Remove(T value)
+        {
+            if (Head == null)
+                throw new Exception("Underflow! nothing to remove ");
+            if (value == null)
+                throw new ArgumentNullException();
+            var curr = Head;
+            SinglyLinkedListNode<T> prev = null;
+            do
+            {
+                if (curr.Value.Equals(value))
+                {
+                    //son eleman
+                    if (curr.Next == null)
+                    {
+                        //head
+                        if (prev==null)
+                        {
+                            Head = null;
+                            return;
+                        }
+                        //last
+                        else
+                        {
+                            prev.Next = null;
+                            return;
+
+                        }
+                    }
+                    else
+                    {   //head
+                        if (prev == null)
+                        {
+                            Head = Head.Next;
+                            return;
+                        }
+                        //ara node
+                        else
+                        {
+                            prev.Next = curr.Next;
+                            return;
+
+                        }
+                    }
+                }
+                prev=curr;
+                curr = curr.Next;
+            } while (curr!=null);
+            throw new ArgumentException("the value is not found");
+        }
         public IEnumerator<T> GetEnumerator()
         {
             return new SinglyLinkedListEnumerator<T>(Head);
