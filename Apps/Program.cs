@@ -62,4 +62,4 @@ linkedList.AddLast(20);
 linkedList.AddAfter(linkedList.Head.Next, 50);
 
 #endregion
-Console.ReadLine();
+Console.ReadKey();
