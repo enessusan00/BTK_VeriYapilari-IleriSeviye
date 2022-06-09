@@ -86,6 +86,7 @@ var list = new DoublyLinkedList<int>();
 list.AddFirst(10);
 list.AddFirst(20);
 list.AddFirst(30);
+list.AddAfter(list.Head.Next, new DoublyLinkedListNode<int>(25));
 #endregion
 //LINQ
 #region

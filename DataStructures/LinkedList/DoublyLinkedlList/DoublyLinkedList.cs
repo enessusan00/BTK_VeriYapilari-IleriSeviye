@@ -38,6 +38,36 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
             newNode.Next = null;            ,
             newNode.Prev = Tail; 
             Tail = newNode;
-        }    
+        }  
+        public void AddAfter(DoublyLinkedListNode<T> refNode,DoublyLinkedListNode<T> newNode)
+        {
+            if(refNode == null)
+                throw new ArgumentNullException();
+            if (refNode == Head && refNode==Tail)
+            {
+                refNode.Next = newNode;
+                refNode.Prev = null;
+
+                newNode.Prev = refNode;
+                newNode.Next = null;
+                Head = refNode;
+                Tail = newNode;
+                return;
+            }
+            if(refNode!=Tail)
+            {
+                newNode.Prev = refNode;
+                newNode.Next = refNode.Next;
+                refNode.Next.Prev = newNode;
+                refNode.Next= newNode;
+            }
+            else
+            {
+                newNode.Next = refNode;
+                newNode.Prev = null;
+                refNode.Next = newNode;
+                Tail = newNode; 
+            }
+        }
     }
 }
