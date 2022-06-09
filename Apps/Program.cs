@@ -1,4 +1,5 @@
-﻿using DataStructures.LinkedList.SinglyLinkedList;
+﻿using DataStructures.LinkedList.DoublyLinkedlList;
+using DataStructures.LinkedList.SinglyLinkedList;
 
 //Array
 #region
@@ -53,30 +54,38 @@
 #endregion
 //LinkedList
 #region
-var linkedList = new SinglyLinkedList<int>();
-linkedList.AddFirst(10);
-linkedList.AddFirst(15);
-linkedList.AddFirst(30);
-linkedList.AddFirst(5);
-linkedList.AddFirst(5);
-linkedList.AddFirst(5);
-linkedList.AddFirst(5);
-linkedList.AddLast(331);
-linkedList.AddLast(331);
-linkedList.AddAfter(linkedList.Head.Next, 50);
-linkedList.AddBefore(linkedList.Head.Next, 30);
-linkedList.RemoveFirst();
-linkedList.RemoveFirst();
-linkedList.RemoveFirst();
-linkedList.RemoveFirst();
-linkedList.RemoveFirst();
-linkedList.RemoveLast();
-linkedList.Remove(331);
-foreach (var item in linkedList)
-{
-    Console.WriteLine(item);
-}
-var clinkedList = new SinglyLinkedList<int>(linkedList);
+/// <summary>
+/// Singly
+/// </summary>
+//var linkedList = new SinglyLinkedList<int>();
+//linkedList.AddFirst(10);
+//linkedList.AddFirst(15);
+//linkedList.AddFirst(30);
+//linkedList.AddFirst(5);
+//linkedList.AddFirst(5);
+//linkedList.AddFirst(5);
+//linkedList.AddFirst(5);
+//linkedList.AddLast(331);
+//linkedList.AddLast(331);
+//linkedList.AddAfter(linkedList.Head.Next, 50);
+//linkedList.AddBefore(linkedList.Head.Next, 30);
+//linkedList.RemoveFirst();
+//linkedList.RemoveFirst();
+//linkedList.RemoveFirst();
+//linkedList.RemoveFirst();
+//linkedList.RemoveFirst();
+//linkedList.RemoveLast();
+//linkedList.Remove(331);
+//foreach (var item in linkedList)
+//{
+//    Console.WriteLine(item);
+//}
+//var clinkedList = new SinglyLinkedList<int>(linkedList);
+///Doubly
+var list = new DoublyLinkedList<int>();
+list.AddFirst(10);
+list.AddFirst(20);
+list.AddFirst(30);
 #endregion
 //LINQ
 #region
@@ -88,4 +97,5 @@ var clinkedList = new SinglyLinkedList<int>(linkedList);
 
 //dlinkedList.ToList().ForEach(x => Console.WriteLine(x+ " "));
 #endregion
+
 Console.ReadKey();
