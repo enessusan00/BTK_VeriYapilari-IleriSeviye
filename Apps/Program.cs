@@ -90,6 +90,7 @@ list.AddAfter(list.Head.Next, new DoublyLinkedListNode<int>(25));
 list.AddBefore(list.Tail, new DoublyLinkedListNode<int>(9));
 list.RemoveFirst();
 list.RemoveLast();
+list.Remove(25);
 foreach (var item in list)
 {
     Console.WriteLine(item);

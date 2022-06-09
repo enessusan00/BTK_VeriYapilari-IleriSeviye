@@ -163,6 +163,44 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
             return temp;
 
         }
+        public void Remove(T value)
+        {
+            if (isHeadNull)
+                throw new ArgumentNullException();
+            if (Head == Tail)
+            {
+                if(Head.Value.Equals(value))
+                    RemoveFirst();
+                return;
+            }
+            var current = Head;
+            while (current!=null)
+            {
+                if(current.Value.Equals(value))
+                {
+                    if(current.Prev == null)
+                    {
+                        current.Next.Prev = null;
+                        Head = current.Next;
+                    }
+                    else if(current.Next == null)
+                    {
+                        current.Prev.Next = null;
+                        Tail=current.Prev;
+                    }
+                    else
+                    {
+                        current.Prev.Next=current.Next;
+                        current.Next.Prev = current.Prev;   
+                    }
+                    break;
+                }
+                current = current.Next;
+            }
+            {
+
+            }
+        }
 
     }
 }
