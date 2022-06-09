@@ -26,30 +26,30 @@ using System.Collections;
 #endregion
 //GenericArray
 #region
-var p1 = new int[] { 1, 2, 3, 4 };
-var p2 = new List<int> { 1, 2, 3, 4 };
-var p3 = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6,7);
-var arr = new DataStructures
-    .Array
-    .Array<int>();
-arr.Add(10);
-arr.Add(15);
-arr.Add(30);
-arr.Add(35);
-arr.Add(35);
-arr.Remove();
-Console.WriteLine($"{arr.Count}/{arr.Capacity}");
-foreach (var item in arr)
-{
-    Console.WriteLine(item);
-}
+//var p1 = new int[] { 1, 2, 3, 4 };
+//var p2 = new List<int> { 1, 2, 3, 4 };
+//var p3 = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6,7);
+//var arr = new DataStructures
+//    .Array
+//    .Array<int>();
+//arr.Add(10);
+//arr.Add(15);
+//arr.Add(30);
+//arr.Add(35);
+//arr.Add(35);
+//arr.Remove();
+//Console.WriteLine($"{arr.Count}/{arr.Capacity}");
+//foreach (var item in arr)
+//{
+//    Console.WriteLine(item);
+//}
 /////////////
-var realArr = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6);
-var copyArr = realArr.Clone() as DataStructures.Array.Array<int>;
-foreach (var item in copyArr)
-{
-    Console.WriteLine(item);
-}
+//var realArr = new DataStructures.Array.Array<int>(1, 2, 3, 4, 5, 6);
+//var copyArr = realArr.Clone() as DataStructures.Array.Array<int>;
+//foreach (var item in copyArr)
+//{
+//    Console.WriteLine(item);
+//}
 #endregion
 //LinkedList
 #region
@@ -61,5 +61,9 @@ linkedList.AddFirst(5);
 linkedList.AddLast(331);
 linkedList.AddAfter(linkedList.Head.Next, 50);
 linkedList.AddBefore(linkedList.Head.Next, 30);
+foreach (var item in linkedList)
+{
+    Console.WriteLine(item);
+}
 #endregion
 Console.ReadKey();
