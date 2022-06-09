@@ -58,7 +58,7 @@ linkedList.AddFirst(10);
 linkedList.AddFirst(15);    
 linkedList.AddFirst(30);
 linkedList.AddFirst(5);
-linkedList.AddLast(20);
+linkedList.AddLast(31);
 linkedList.AddAfter(linkedList.Head.Next, 50);
 
 #endregion
