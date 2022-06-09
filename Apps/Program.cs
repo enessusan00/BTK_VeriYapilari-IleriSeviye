@@ -88,7 +88,8 @@ list.AddFirst(20);
 list.AddFirst(30);
 list.AddAfter(list.Head.Next, new DoublyLinkedListNode<int>(25));
 list.AddBefore(list.Tail, new DoublyLinkedListNode<int>(9));
-list.RemoveFirs();
+list.RemoveFirst();
+list.RemoveLast();
 foreach (var item in list)
 {
     Console.WriteLine(item);

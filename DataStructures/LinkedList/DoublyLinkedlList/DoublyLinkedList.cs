@@ -127,7 +127,7 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
         {
             return GetAllNodes().GetEnumerator(); 
         }
-        public T RemoveFirs()
+        public T RemoveFirst()
         {
             var temp = Head.Value;
             if (isHeadNull)
@@ -145,5 +145,24 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
             return temp;
             
         }
+        public T RemoveLast()
+        {
+            var temp = Tail.Value;
+            if (isHeadNull)
+                throw new ArgumentNullException();
+            if (Head == Tail)
+            {
+                Head = null;
+                Tail = null;
+            }
+            else
+            {
+                Tail.Prev.Next = null;
+                Tail = Tail.Prev;
+            }
+            return temp;
+
+        }
+
     }
 }
