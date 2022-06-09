@@ -65,5 +65,6 @@ foreach (var item in linkedList)
 {
     Console.WriteLine(item);
 }
+var clinkedList= new SinglyLinkedList<int>(linkedList);
 #endregion
 Console.ReadKey();
