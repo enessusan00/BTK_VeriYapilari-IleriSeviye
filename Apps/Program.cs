@@ -92,6 +92,11 @@ foreach (var item in list)
 {
     Console.WriteLine(item);
 }
+var aList = new DoublyLinkedList<char>( new List<char>() { 'a','b','c'});
+foreach (var item in aList)
+{
+    Console.WriteLine(item);
+}
 #endregion
 //LINQ
 #region
