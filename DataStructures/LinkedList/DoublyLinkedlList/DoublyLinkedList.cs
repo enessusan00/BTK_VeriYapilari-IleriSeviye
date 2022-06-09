@@ -11,6 +11,7 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
     {
         public DoublyLinkedListNode<T> Head { get; set; }
         public DoublyLinkedListNode<T> Tail { get; set; }
+        private bool isHeadNull => Head == null;
 
         public DoublyLinkedList()
         {
@@ -125,6 +126,24 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
         public IEnumerator GetEnumerator()
         {
             return GetAllNodes().GetEnumerator(); 
+        }
+        public T RemoveFirs()
+        {
+            var temp = Head.Value;
+            if (isHeadNull)
+                throw new ArgumentNullException();
+            if (Head == Tail)
+            {
+                Head = null;
+                Tail=null;  
+            }
+            else
+            {
+                Head=Head.Next;
+                Head.Prev = null;
+            }
+            return temp;
+            
         }
     }
 }
