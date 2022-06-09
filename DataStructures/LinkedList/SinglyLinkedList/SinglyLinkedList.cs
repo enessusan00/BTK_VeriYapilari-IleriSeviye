@@ -95,7 +95,14 @@ namespace DataStructures.LinkedList.SinglyLinkedList
             }
             throw new ArgumentException("There is no such a node in the linked list.");
         }
-
+        public T RemoveFirst()
+        {
+            if(isHeadNull)
+                throw new Exception("Underflow! nothing to remove ");
+            var firsValue = Head.Value;
+            Head=Head.Next;
+            return firsValue;
+        }
         public IEnumerator<T> GetEnumerator()
         {
             return new SinglyLinkedListEnumerator<T>(Head);

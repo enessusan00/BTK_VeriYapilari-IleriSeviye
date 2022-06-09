@@ -53,25 +53,33 @@
 #endregion
 //LinkedList
 #region
-//var linkedList = new SinglyLinkedList<int>();
-//linkedList.AddFirst(10);
-//linkedList.AddFirst(15);    
-//linkedList.AddFirst(30);
-//linkedList.AddFirst(5);
-//linkedList.AddLast(331);
-//linkedList.AddAfter(linkedList.Head.Next, 50);
-//linkedList.AddBefore(linkedList.Head.Next, 30);
-//foreach (var item in linkedList)
-//{
-//    Console.WriteLine(item);
-//}
-//var clinkedList= new SinglyLinkedList<int>(linkedList);
+var linkedList = new SinglyLinkedList<int>();
+linkedList.AddFirst(10);
+linkedList.AddFirst(15);
+linkedList.AddFirst(30);
+linkedList.AddFirst(5);
+linkedList.AddLast(331);
+linkedList.AddAfter(linkedList.Head.Next, 50);
+linkedList.AddBefore(linkedList.Head.Next, 30);
+linkedList.RemoveFirst();
+linkedList.RemoveFirst();
+linkedList.RemoveFirst();
+linkedList.RemoveFirst();
+linkedList.RemoveFirst();
+
+foreach (var item in linkedList)
+{
+    Console.WriteLine(item);
+}
+var clinkedList = new SinglyLinkedList<int>(linkedList);
 #endregion
 //LINQ
 #region
-var rnd = new Random();
-var initial=Enumerable.Range(1,10).OrderBy(x => rnd.Next()).ToList();
-var linkedList= new SinglyLinkedList<int>(initial);
-linkedList.Where(x => x > 5).ToList().ForEach(x => Console.WriteLine(x+ " "));
+
+var dlinkedList= new SinglyLinkedList<int>(linkedList);
+dlinkedList.AddFirst(10);
+dlinkedList.AddFirst(15);
+dlinkedList.AddFirst(30);
+dlinkedList.ToList().ForEach(x => Console.WriteLine(x+ " "));
 #endregion
 Console.ReadKey();
