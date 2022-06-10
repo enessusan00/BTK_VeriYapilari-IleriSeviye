@@ -1,22 +1,35 @@
-﻿namespace DataStructures.Queue
+﻿using DataStructures.LinkedList.DoublyLinkedlList;
+
+namespace DataStructures.Queue
 {
     internal class LinkedListQueue<T> : IQueue<T>
     {
-        public int Count => throw new NotImplementedException();
+        private readonly DoublyLinkedList<T> list = new DoublyLinkedList<T>();
+        public int Count { get; private set; }
 
         public T DeQueue()
         {
-            throw new NotImplementedException();
+            if (Count == 0)
+                throw new Exception("Empty queue");
+            
+            var temp =list.RemoveFirst();
+            Count--;
+            return temp;
         }
 
         public void EnQueue(T value)
         {
-            throw new NotImplementedException();
+            if(value == null)
+                throw new ArgumentNullException();
+            list.AddLast(value);
+            Count++;
         }
 
         public T Peek()
         {
-            throw new NotImplementedException();
+            if (Count == 0)
+                throw new Exception("Empty queue");
+            return list.Head.Value;
         }
     }
 }
