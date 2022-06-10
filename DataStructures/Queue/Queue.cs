@@ -42,7 +42,7 @@ namespace DataStructures.Queue
         int Count { get; }
         void EnQueue(T value);
         T DeQueue();
-        T Peek()
+        T Peek();
     }
     public enum QueueType
     {

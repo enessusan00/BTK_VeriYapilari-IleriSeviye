@@ -139,7 +139,7 @@ namespace DataStructures.LinkedList.DoublyLinkedlList
             }
             else
             {
-                Head=Head.Next;
+                Head.Next=Head;
                 Head.Prev = null;
             }
             return temp;
