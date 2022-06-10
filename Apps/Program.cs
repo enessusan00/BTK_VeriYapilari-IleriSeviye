@@ -1,6 +1,6 @@
 ﻿using DataStructures.LinkedList.DoublyLinkedlList;
 using DataStructures.LinkedList.SinglyLinkedList;
-
+using DataStructures.Stack;
 //Array
 #region
 ////Array
@@ -82,24 +82,24 @@ using DataStructures.LinkedList.SinglyLinkedList;
 //}
 //var clinkedList = new SinglyLinkedList<int>(linkedList);
 ///Doubly
-var list = new DoublyLinkedList<int>();
-list.AddFirst(10);
-list.AddFirst(20);
-list.AddFirst(30);
-list.AddAfter(list.Head.Next, new DoublyLinkedListNode<int>(25));
-list.AddBefore(list.Tail, new DoublyLinkedListNode<int>(9));
-list.RemoveFirst();
-list.RemoveLast();
-list.Remove(25);
-foreach (var item in list)
-{
-    Console.WriteLine(item);
-}
-var aList = new DoublyLinkedList<char>( new List<char>() { 'a','b','c'});
-foreach (var item in aList)
-{
-    Console.WriteLine(item);
-}
+//var list = new DoublyLinkedList<int>();
+//list.AddFirst(10);
+//list.AddFirst(20);
+//list.AddFirst(30);
+//list.AddAfter(list.Head.Next, new DoublyLinkedListNode<int>(25));
+//list.AddBefore(list.Tail, new DoublyLinkedListNode<int>(9));
+//list.RemoveFirst();
+//list.RemoveLast();
+//list.Remove(25);
+//foreach (var item in list)
+//{
+//    Console.WriteLine(item);
+//}
+//var aList = new DoublyLinkedList<char>( new List<char>() { 'a','b','c'});
+//foreach (var item in aList)
+//{
+//    Console.WriteLine(item);
+//}
 #endregion
 //LINQ
 #region
@@ -110,6 +110,21 @@ foreach (var item in aList)
 //dlinkedList.AddFirst(30);
 
 //dlinkedList.ToList().ForEach(x => Console.WriteLine(x+ " "));
+#endregion
+//Stack
+#region
+var charset = new char[] { 'a', 'b', 'c', 'd' };
+var stack1 = new DataStructures.Stack.Stack<char>();
+var stack2 = new DataStructures.Stack.Stack<char>(StackType.LinkedList);
+foreach (var item in charset)
+{
+    Console.WriteLine(item);
+    stack1.Push(item);
+    stack2.Push(item);
+}
+Console.WriteLine(stack1.Peek());
+Console.WriteLine(stack2.Peek());
+
 #endregion
 
 Console.ReadKey();
