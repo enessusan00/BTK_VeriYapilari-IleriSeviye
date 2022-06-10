@@ -25,14 +25,18 @@ namespace DataStructures.Array
             {
                 Add(item);
             }
+           
 
         }
         public Array(IEnumerable<T> collection)
         {
             InnerList= new T[collection.ToArray().Length];
             Count = 0;
+            
             foreach (var item in collection)
                 Add(item);
+            
+
         }
         public void Add(T item)
         {
@@ -72,6 +76,21 @@ namespace DataStructures.Array
             System.Array.Copy(InnerList, temp, InnerList.Length);
             InnerList = temp;
         }
+        public  void Reverse( T[] array)
+        {
+            Count = array.Length;
+            T[] temp = new T[Count];
+
+            for (int i = 0; i < Count-1; i++)
+            {
+                temp[Count - 1 - i] = array[i];
+            }
+
+            for (int i = 0; i < Count; i++)
+            {
+                array[i] = temp[i];
+            }
+        }
 
         public object Clone()
         {
@@ -80,13 +99,12 @@ namespace DataStructures.Array
             foreach (var item in arr)
                 arr.Add(item);
             return arr;
-            {
-
-            }
+            
         }
 
         public IEnumerator<T> GetEnumerator()
         {
+           
             return InnerList.Take(Count).GetEnumerator();
         }
 

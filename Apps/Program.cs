@@ -1,4 +1,5 @@
-﻿using DataStructures.LinkedList.DoublyLinkedlList;
+﻿using Apps;
+using DataStructures.LinkedList.DoublyLinkedlList;
 using DataStructures.LinkedList.SinglyLinkedList;
 using DataStructures.Stack;
 //Array
@@ -41,6 +42,11 @@ using DataStructures.Stack;
 //arr.Remove();
 //Console.WriteLine($"{arr.Count}/{arr.Capacity}");
 //foreach (var item in arr)
+//{
+//    Console.WriteLine(item);
+//}
+//var array = new DataStructures.Array.Array<int>(new int[] {1,2,3,4,5,6,7}).Reverse();
+//foreach (var item in array)
 //{
 //    Console.WriteLine(item);
 //}
@@ -113,18 +119,20 @@ using DataStructures.Stack;
 #endregion
 //Stack
 #region
-var charset = new char[] { 'a', 'b', 'c', 'd' };
-var stack1 = new DataStructures.Stack.Stack<char>();
-var stack2 = new DataStructures.Stack.Stack<char>(StackType.LinkedList);
-foreach (var item in charset)
-{
-    Console.WriteLine(item);
-    stack1.Push(item);
-    stack2.Push(item);
-}
-Console.WriteLine(stack1.Peek());
-Console.WriteLine(stack2.Peek());
-
+//var charset = new char[] { 'a', 'b', 'c', 'd' };
+//var stack1 = new DataStructures.Stack.Stack<char>();
+//var stack2 = new DataStructures.Stack.Stack<char>(StackType.LinkedList);
+//foreach (var item in charset)
+//{
+//    Console.WriteLine(item);
+//    stack1.Push(item);
+//    stack2.Push(item);
+//}
+//Console.WriteLine(stack1.Peek());
+//Console.WriteLine(stack2.Peek());
 #endregion
+//PostFixExample
+Console.WriteLine(PostFixExample.Run("231*+9-"));
+
 
 Console.ReadKey();
