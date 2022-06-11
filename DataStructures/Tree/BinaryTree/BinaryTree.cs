@@ -23,6 +23,35 @@ namespace DataStructures.Tree.BinaryTree
             }
             return list;
         }
+        public List<Node<T>> InOrderNonRecursive(Node<T> root)
+        {
+            var list = new List<Node<T>>();
+            var S = new Stack.Stack<Node<T>>();
+            Node<T> currNode = root;
+            bool done = false;
+            while (!done)
+            {
+                if (currNode!=null)
+                {
+                    S.Push(currNode);
+                    currNode = currNode.Left;
+                }
+                else
+                {
+                    if(S.Count==0)
+                    {
+                        done = true;
+                    }
+                    else
+                    {
+                        currNode = S.Pop();
+                        list.Add(currNode);
+                        currNode = currNode.Right;
+                    }
+                }
+            }
+            return list;
+        }
         public List<Node<T>> PreOrder(Node<T> root)
         {
             if (!(root == null))

@@ -167,6 +167,7 @@ using DataStructures.Tree.BinaryTree;
 var BST = new BST<int>(new List<int>()
     { 1,2,3,4,5,7,6,8,9,10,11,12,13,14,15,16,17});
 new BinaryTree<int>().InOrder(BST.Root).ForEach(x => Console.Write(x+" "));
+new BinaryTree<int>().InOrderNonRecursive(BST.Root).ForEach(x => Console.Write(x + " "));
 #endregion
 
 Console.ReadKey();
