@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DataStructures.Tree.BinaryTree;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,10 +35,16 @@ namespace DataStructures.Tree.BinarySearchTree
         public void Add(T value)
         {
             if(value == null)
+            {
                 throw new ArgumentNullException();
+            }
+                
             var newNode= new Node<T>(value);
             if(Root == null)
+            {
                 Root = newNode;
+            }
+                
             else
             {
                 var curr = Root;
@@ -51,6 +58,7 @@ namespace DataStructures.Tree.BinarySearchTree
                         if (curr == null)
                         {
                             parent.Left = newNode;
+                            break;
                         } 
                             
                     }

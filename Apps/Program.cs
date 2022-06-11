@@ -2,6 +2,8 @@
 using DataStructures.LinkedList.DoublyLinkedlList;
 using DataStructures.LinkedList.SinglyLinkedList;
 using DataStructures.Stack;
+using DataStructures.Tree.BinarySearchTree;
+using DataStructures.Tree.BinaryTree;
 //Array
 #region
 ////Array
@@ -137,28 +139,34 @@ using DataStructures.Stack;
 #endregion
 //Queue
 #region
-var numbers = new int[] { 10, 20, 30 };
-var q1 = new DataStructures.Queue.Queue<int>();
-var q2 = new DataStructures.Queue.Queue<int>(DataStructures.Queue.QueueType.LinkedList);
+//var numbers = new int[] { 10, 20, 30 };
+//var q1 = new DataStructures.Queue.Queue<int>();
+//var q2 = new DataStructures.Queue.Queue<int>(DataStructures.Queue.QueueType.LinkedList);
 
-foreach (var number in numbers)
-{
-    Console.WriteLine(number);
-    q1.EnQueue(number);
-    q2.EnQueue(number);
-}
+//foreach (var number in numbers)
+//{
+//    Console.WriteLine(number);
+//    q1.EnQueue(number);
+//    q2.EnQueue(number);
+//}
 
-Console.WriteLine($"q1 Count : {q1.Count}");
-Console.WriteLine($"q2 Count : {q2.Count}");
+//Console.WriteLine($"q1 Count : {q1.Count}");
+//Console.WriteLine($"q2 Count : {q2.Count}");
 
-Console.WriteLine($"{q1.DeQueue()} has been removed from q1.");
-Console.WriteLine($"{q2.DeQueue()} has been removed from q2.");
+//Console.WriteLine($"{q1.DeQueue()} has been removed from q1.");
+//Console.WriteLine($"{q2.DeQueue()} has been removed from q2.");
 
-Console.WriteLine($"q1 Count : {q1.Count}");
-Console.WriteLine($"q2 Count : {q2.Count}");
+//Console.WriteLine($"q1 Count : {q1.Count}");
+//Console.WriteLine($"q2 Count : {q2.Count}");
 
-Console.WriteLine($"q1 Peek : {q1.Peek()}");
-Console.WriteLine($"q2 Peek : {q2.Peek()}");
+//Console.WriteLine($"q1 Peek : {q1.Peek()}");
+//Console.WriteLine($"q2 Peek : {q2.Peek()}");
+#endregion
+//BST
+#region
+var BST = new BST<int>(new List<int>()
+    { 1,2,3,4,5,7,6,8,9,10,11,12,13,14,15,16,17});
+new BinaryTree<int>().InOrder(BST.Root).ForEach(x => Console.Write(x+" "));
 #endregion
 
 Console.ReadKey();
