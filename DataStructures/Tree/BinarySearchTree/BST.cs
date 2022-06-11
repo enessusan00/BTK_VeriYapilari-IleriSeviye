@@ -15,6 +15,14 @@ namespace DataStructures.Tree.BinarySearchTree
         {
                 
         }
+        public BST(IEnumerable<T> collection)
+        {
+            foreach (var item in collection)
+            {
+                Add(item);
+            }
+
+        }
         public IEnumerator<T> GetEnumerator()
         {
             throw new NotImplementedException();
