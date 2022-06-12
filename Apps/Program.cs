@@ -209,9 +209,7 @@ using DataStructures.Tree.BinaryTree;
 #endregion
 //PriorityQueue
 #region
-var heap = new DataStructures
-               .Heap
-               .MinHeap<int>(new int[] { 4, 1, 10, 8, 7, 5, 9, 3, 2 });
+var heap = new  DataStructures                        .Heap                      .BinaryHeap<char>(DataStructures.Shared.SortDirection.Asceding,new char[] { 'a','ı','ı','y','l','z','m' });
 
 Console.WriteLine(heap.DeleteMinMax() + " has been removed.");
 
@@ -219,17 +217,48 @@ foreach (var item in heap)
 {
     Console.Write(item + "  ");
 }
-Console.WriteLine();
-var MinHeap = new DataStructures
-                           .Heap
-                           .BinaryHeap<int>(DataStructures.Shared.SortDirection.Asceding,
-                           new int[] { 54, 45, 36, 27, 29, 18, 21, 99 });
+//Console.WriteLine();
+//var MinHeap = new DataStructures
+//                           .Heap
+//                           .BinaryHeap<int>(DataStructures.Shared.SortDirection.Asceding,
+//                           new int[] { 54, 45, 36, 27, 29, 18, 21, 99 });
 
 
-foreach (var item in MinHeap)
-{
-    Console.Write(item + "  ");
-}
+//foreach (var item in MinHeap)
+//{
+//    Console.Write(item + "  ");
+//}
+#endregion
+#region
+
+//var arr = new int[] { 16, 23, 44, 12, 55, 40, 6 };
+//foreach (var item in arr)
+//{
+//    Console.Write($"{item,-5}");
+//}
+//Console.WriteLine();
+
+//DataStructures.SortingAlgo.SelectionSort.Sort<int>(arr,
+//    DataStructures.Shared.SortDirection.Descending);
+//foreach (var item in arr)
+//{
+//    Console.Write($"{item,-5}");
+//}
+
+//Console.WriteLine();
+
+//DataStructures.SortingAlgo.SelectionSort.Sort<int>(arr,
+//    DataStructures.Shared.SortDirection.Asceding);
+//foreach (var item in arr)
+//{
+//    Console.Write($"{item,-5}");
+//}
+//DataStructures.SortingAlgorithms.BubbleSort.Sort<int>(arr,
+//    DataStructures.Shared.SortDirection.Descending);
+//foreach (var item in arr)
+//{
+//    Console.Write($"{item,-5}");
+//}
 #endregion
 
 
