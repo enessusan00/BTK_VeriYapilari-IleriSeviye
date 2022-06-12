@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Heap
 {
-    public class BHeap<T>
+    public class BHeap<T>:IEnumerable<T>
+        where T : IComparable<T>
     {
         public T[] Array { get; private set; }
         private int position;
@@ -71,5 +73,14 @@ namespace DataStructures.Heap
 
         }
 
+        public IEnumerator<T> GetEnumerator()
+        {
+            return Array.Take(position).GetEnumerator();
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
     }
 }
