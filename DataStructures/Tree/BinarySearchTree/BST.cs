@@ -75,5 +75,22 @@ namespace DataStructures.Tree.BinarySearchTree
                 }                        
             }
         }
+        public  Node<T> FindMin(Node<T> root)
+        {
+            var curr = root;
+            while(curr.Left != null)
+                curr=curr.Left;
+            return curr;
+
+        }
+        public Node<T> FindMax(Node<T> root)
+        {
+            var curr = root;
+            while (curr.Right != null)
+                curr = curr.Right;
+            return curr;
+
+        }
+
     }
 }
