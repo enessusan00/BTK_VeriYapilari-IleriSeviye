@@ -164,48 +164,61 @@ using DataStructures.Tree.BinaryTree;
 #endregion
 //BST
 #region
-var BST = new BST<int>(new List<int>() { 60, 40, 70, 20, 45, 65, 85 });
-var bt = new DataStructures.Tree.BinaryTree.BinaryTree<int>();
+//var BST = new BST<int>(new List<int>() { 60, 40, 70, 20, 45, 65, 85 });
+//var bt = new DataStructures.Tree.BinaryTree.BinaryTree<int>();
 
-bt.InOrder(BST.Root)
-    .ForEach(node => Console.Write($"{node,-3} "));
+//bt.InOrder(BST.Root)
+//    .ForEach(node => Console.Write($"{node,-3} "));
 
-BST.Remove(BST.Root, 20);
-BST.Remove(BST.Root, 40);
-BST.Remove(BST.Root, 60);
+//BST.Remove(BST.Root, 20);
+//BST.Remove(BST.Root, 40);
+//BST.Remove(BST.Root, 60);
 
-Console.WriteLine();
-bt.ClearList();
+//Console.WriteLine();
+//bt.ClearList();
 
-bt.InOrder(BST.Root)
-   .ForEach(node => Console.Write($"{node,-3} "));
+//bt.InOrder(BST.Root)
+//   .ForEach(node => Console.Write($"{node,-3} "));
 
-var bst = new BST<byte>(new byte[] { 60, 40, 70, 20, 45, 65, 85, 90 });
+//var bst = new BST<byte>(new byte[] { 60, 40, 70, 20, 45, 65, 85, 90 });
 
-var list = new DataStructures
-    .Tree
-    .BinaryTree
-    .BinaryTree<byte>().InOrder(bst.Root);
+//var list = new DataStructures
+//    .Tree
+//    .BinaryTree
+//    .BinaryTree<byte>().InOrder(bst.Root);
 
-foreach (var node in list)
+//foreach (var node in list)
+//{
+//    Console.Write($"{node,-3} ");
+//}
+//Console.WriteLine();
+//Console.WriteLine($"Min     : {bst.FindMin(bst.Root)}");
+//Console.WriteLine($"Max     : {bst.FindMax(bst.Root)}");
+//Console.WriteLine($"Depth   : {DataStructures.Tree.BinaryTree.BinaryTree<byte>.MaxDepth(bst.Root)}");
+//Console.WriteLine();
+
+//Console.WriteLine($"Minimum value : {BST.FindMin(BST.Root)}");
+//Console.WriteLine($"Maximum value : {BST.FindMax(BST.Root)}");
+
+//var keyNode = BST.Find(BST.Root, 100);
+
+//if (keyNode != null)
+//    Console.WriteLine($"{keyNode.Value} - " +
+//    $"Left: {keyNode.Left.Value} - " +
+//    $"Right : {keyNode.Right.Value}");
+#endregion
+//PriorityQueue
+#region
+var heap = new DataStructures
+               .Heap
+               .MinHeap<int>(new int[] { 4, 1, 10, 8, 7, 5, 9, 3, 2 });
+
+Console.WriteLine(heap.DeleteMinMax() + " has been removed.");
+
+foreach (var item in heap)
 {
-    Console.Write($"{node,-3} ");
+    Console.WriteLine(item);
 }
-Console.WriteLine();
-Console.WriteLine($"Min     : {bst.FindMin(bst.Root)}");
-Console.WriteLine($"Max     : {bst.FindMax(bst.Root)}");
-Console.WriteLine($"Depth   : {DataStructures.Tree.BinaryTree.BinaryTree<byte>.MaxDepth(bst.Root)}");
-Console.WriteLine();
-
-Console.WriteLine($"Minimum value : {BST.FindMin(BST.Root)}");
-Console.WriteLine($"Maximum value : {BST.FindMax(BST.Root)}");
-
-var keyNode = BST.Find(BST.Root, 100);
-
-if (keyNode != null)
-    Console.WriteLine($"{keyNode.Value} - " +
-    $"Left: {keyNode.Left.Value} - " +
-    $"Right : {keyNode.Right.Value}");
 #endregion
 
 
