@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataStructures.Heap
 {
-    public class BHeap<T>:IEnumerable<T>
+    public abstract class BHeap<T>:IEnumerable<T>
         where T : IComparable<T>
     {
         public T[] Array { get; private set; }
@@ -24,6 +24,16 @@ namespace DataStructures.Heap
             Count = 0;
             Array = new T[_size];
             position = 0;
+        }
+        public BHeap(IEnumerable<T> collection)
+        {
+            Count = 0;
+            Array = new T[collection.ToArray().Length];
+            position = 0;
+            foreach (var item in collection)
+            {
+                Add(item);
+            }
         }
         private int GetLeftChildIndex(int i) => 2 * i + 1;
         private int GetRightChildIndex(int i) => 2 * i + 2;
@@ -72,7 +82,8 @@ namespace DataStructures.Heap
             return temp;
 
         }
-
+        protected abstract void HeapifyUp();
+        protected abstract void HeapifyDown();
         public IEnumerator<T> GetEnumerator()
         {
             return Array.Take(position).GetEnumerator();
@@ -81,6 +92,19 @@ namespace DataStructures.Heap
         IEnumerator IEnumerable.GetEnumerator()
         {
             return GetEnumerator();
+        }
+    }
+    public class MinHeap<T> : BHeap<T>, IEnumerable<T>
+        where T : IComparable<T>
+    {
+        protected override void HeapifyDown()
+        {
+            throw new NotImplementedException();
+        }
+
+        protected override void HeapifyUp()
+        {
+            throw new NotImplementedException();
         }
     }
 }
