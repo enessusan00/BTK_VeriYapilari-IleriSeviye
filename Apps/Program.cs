@@ -175,12 +175,26 @@ BST.Remove(BST.Root, 40);
 BST.Remove(BST.Root, 60);
 
 Console.WriteLine();
-
+bt.ClearList();
 
 bt.InOrder(BST.Root)
    .ForEach(node => Console.Write($"{node,-3} "));
 
+var bst = new BST<byte>(new byte[] { 60, 40, 70, 20, 45, 65, 85, 90 });
 
+var list = new DataStructures
+    .Tree
+    .BinaryTree
+    .BinaryTree<byte>().InOrder(bst.Root);
+
+foreach (var node in list)
+{
+    Console.Write($"{node,-3} ");
+}
+Console.WriteLine();
+Console.WriteLine($"Min     : {bst.FindMin(bst.Root)}");
+Console.WriteLine($"Max     : {bst.FindMax(bst.Root)}");
+Console.WriteLine($"Depth   : {DataStructures.Tree.BinaryTree.BinaryTree<byte>.MaxDepth(bst.Root)}");
 Console.WriteLine();
 
 Console.WriteLine($"Minimum value : {BST.FindMin(BST.Root)}");
