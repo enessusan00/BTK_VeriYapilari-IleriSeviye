@@ -217,7 +217,18 @@ Console.WriteLine(heap.DeleteMinMax() + " has been removed.");
 
 foreach (var item in heap)
 {
-    Console.WriteLine(item);
+    Console.Write(item + "  ");
+}
+Console.WriteLine();
+var MinHeap = new DataStructures
+                           .Heap
+                           .BinaryHeap<int>(DataStructures.Shared.SortDirection.Asceding,
+                           new int[] { 54, 45, 36, 27, 29, 18, 21, 99 });
+
+
+foreach (var item in MinHeap)
+{
+    Console.Write(item + "  ");
 }
 #endregion
 

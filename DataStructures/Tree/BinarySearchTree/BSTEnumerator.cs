@@ -12,7 +12,7 @@ namespace DataStructures.Tree.BST
 
         public BSTEnumerator(Node<T> root)
         {
-            list = new BinaryTree<T>().InOrderNonRecursiveTraversal(root);
+            list = new BinaryTree<T>().InOrderNonRecursive(root);
         }
 
         public T Current => list[indexer].Value;

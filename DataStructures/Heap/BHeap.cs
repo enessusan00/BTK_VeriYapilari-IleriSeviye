@@ -3,12 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace DataStructures.Heap
 {
-    public abstract class BHeap<T>:IEnumerable<T>
-        where T : IComparable<T>
+    public abstract class BHeap<T> : IEnumerable<T>
+        where T:IComparable
     {
         public T[] Array { get; private set; }
         protected int position;
@@ -38,8 +37,8 @@ namespace DataStructures.Heap
 
         protected int GetLeftChildIndex(int i) => 2 * i + 1;
         protected int GetRightChildIndex(int i) => 2 * i + 2;
-        protected int GetParentIndex(int i) => (i - 1) / 2;
-        protected bool HasLeftChild(int i) =>
+        protected int GetParentIndex(int i) => (i-1)/2;
+        protected bool HasLeftChild(int i) => 
             GetLeftChildIndex(i) < position;
         protected bool HasRightChild(int i) =>
             GetRightChildIndex(i) < position;
@@ -54,7 +53,7 @@ namespace DataStructures.Heap
                 throw new Exception("Empty heap!");
             return Array[0];
         }
-
+        
         public void Swap(int first, int second)
         {
             var temp = Array[first];
@@ -63,7 +62,7 @@ namespace DataStructures.Heap
         }
         public void Add(T value)
         {
-            if (position == Array.Length)
+            if (position==Array.Length)
                 throw new IndexOutOfRangeException("Overflow!");
             Array[position] = value;
             position++;
