@@ -58,7 +58,18 @@ namespace DataStructures.Heap
             Count++;
             HeapifyUp();
         }
+        public T DeleteMinMax()
+        {
+            if (position == Array.Length)
+                throw new IndexOutOfRangeException("Underflow!");
+            var temp = Array[0];
+            Array[0] = Array[position - 1];
+            position--;
+            Count--;
+            HeapifyDown();
+            return temp;
 
+        }
 
     }
 }
