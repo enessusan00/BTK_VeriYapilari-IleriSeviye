@@ -43,6 +43,12 @@ namespace DataStructures.Heap
             }
             return Array[0];
         }
+        public void Swap(int first,int second)
+        {
+            var temp=Array[first];
+            Array[first]=Array[second];
+            Array[second]=temp;
+        }
 
     }
 }
