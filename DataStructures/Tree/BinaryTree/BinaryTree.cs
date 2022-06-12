@@ -23,6 +23,7 @@ namespace DataStructures.Tree.BinaryTree
             }
             return list;
         }
+        public void ClearList() => list.Clear();
         public List<Node<T>> InOrderNonRecursive(Node<T> root)
         {
             var list = new List<Node<T>>();
