@@ -164,13 +164,34 @@ using DataStructures.Tree.BinaryTree;
 #endregion
 //BST
 #region
-var BST = new BST<int>(new List<int>()
-    { 1,2,3,4,5,7,6,8,9,10,11,12,13,14,15,16,17});
-new BinaryTree<int>().InOrder(BST.Root).ForEach(x => Console.Write(x+" "));
-new BinaryTree<int>().InOrderNonRecursive(BST.Root).ForEach(x => Console.Write(x + " "));
-Console.WriteLine($"Min value = {BST.FindMin(BST.Root)}");
-Console.WriteLine($"Max value = {BST.FindMax(BST.Root)}");
+var BST = new BST<int>(new List<int>() { 60, 40, 70, 20, 45, 65, 85 });
+var bt = new DataStructures.Tree.BinaryTree.BinaryTree<int>();
 
+bt.InOrder(BST.Root)
+    .ForEach(node => Console.Write($"{node,-3} "));
+
+BST.Remove(BST.Root, 20);
+BST.Remove(BST.Root, 40);
+BST.Remove(BST.Root, 60);
+
+Console.WriteLine();
+
+
+bt.InOrder(BST.Root)
+   .ForEach(node => Console.Write($"{node,-3} "));
+
+
+Console.WriteLine();
+
+Console.WriteLine($"Minimum value : {BST.FindMin(BST.Root)}");
+Console.WriteLine($"Maximum value : {BST.FindMax(BST.Root)}");
+
+var keyNode = BST.Find(BST.Root, 100);
+
+if (keyNode != null)
+    Console.WriteLine($"{keyNode.Value} - " +
+    $"Left: {keyNode.Left.Value} - " +
+    $"Right : {keyNode.Right.Value}");
 #endregion
 
 
