@@ -49,6 +49,16 @@ namespace DataStructures.Heap
             Array[first]=Array[second];
             Array[second]=temp;
         }
+        public void Add(T value)
+        {
+            if (position == Array.Length)
+                throw new IndexOutOfRangeException("Overflow!");
+            Array[position]=value;
+            position++;
+            Count++;
+            HeapifyUp();
+        }
+
 
     }
 }
