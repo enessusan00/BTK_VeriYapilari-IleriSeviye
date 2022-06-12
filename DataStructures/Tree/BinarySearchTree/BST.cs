@@ -1,4 +1,5 @@
 ﻿using DataStructures.Tree.BinaryTree;
+using DataStructures.Tree.BST;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -26,11 +27,11 @@ namespace DataStructures.Tree.BinarySearchTree
         }
         public IEnumerator<T> GetEnumerator()
         {
-            throw new NotImplementedException();
+            return new BSTEnumerator<T>(Root);
         }
         IEnumerator IEnumerable.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return GetEnumerator();
         }
         public void Add(T value)
         {
